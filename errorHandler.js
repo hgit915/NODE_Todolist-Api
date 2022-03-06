@@ -10,7 +10,7 @@ function errorHandle(res, code) {
   switch (code) {
     case '001':
       resCode = 400
-      message = '找不到物件屬性 title，請確認 request'
+      message = '找不到物件屬性(title)，請確認 request'
       break
     case '400':
       resCode = 400
@@ -22,7 +22,7 @@ function errorHandle(res, code) {
       break
 
     default:
-      message = 'oops something wrong~'
+      message = 'oops somethings wrong~'
       break
   }
 
