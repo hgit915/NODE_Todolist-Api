@@ -1,6 +1,7 @@
 const http = require('http')
 const { v4: uuidv4 } = require('uuid') // v4 是 UUID 想要的版本
 const errorHandle = require('./errorHandler')
+const headers = require('./headers')
 
 // todos 要放在外層，不然會被 requestListener 洗掉
 const todos = []
@@ -8,13 +9,6 @@ const todos = []
 // 建立 server
 // 要放在 server 前，不然話發生  Cannot access 'requestListener' before initialization => 因為 undefined
 const requestListener = (req, res) => {
-  const headers = {
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization, Content-Length, X-Requested-With',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'PATCH, POST, GET,OPTIONS,DELETE',
-    'Content-Type': 'application/json',
-  }
-
   let body = '' // 用來拼湊成完整 request 送來的資料
   req.on('data', chunk => {
     // 監聽到 body 有資料就把 chunk 累加起來
