@@ -114,7 +114,7 @@ const requestListener = (req, res) => {
           errorHandle(res, '001')
         }
       } catch (error) {
-        errorHandle(res, '400')
+        errorHandle(res)
       }
     })
   } else if (req.method == 'OPTIONS') {
