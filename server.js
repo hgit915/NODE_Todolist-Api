@@ -111,7 +111,7 @@ const requestListener = (req, res) => {
           )
           res.end()
         } else {
-          errorHandle(res, '001')
+          errorHandle(res, '400')
         }
       } catch (error) {
         errorHandle(res)

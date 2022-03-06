@@ -16,6 +16,7 @@ function errorHandle(res, code) {
       resCode = 400
       message = '欄位填寫錯誤，或無此 todo id'
       break
+
     case '404':
       resCode = 404
       message = '404 not found!'
