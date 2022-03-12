@@ -1,7 +1,7 @@
 const headers = require('./headers')
-function errorHandle(res, code) {
+function errorHandle(res, code = '') {
   let message = ''
-
+  let resCode = 400
   switch (code) {
     case '001':
       resCode = 400

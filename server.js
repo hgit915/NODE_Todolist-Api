@@ -51,7 +51,7 @@ const requestListener = (req, res) => {
           errorHandle(res, '001')
         }
       } catch (error) {
-        console.log(err)
+        console.log(error)
         errorHandle(res)
       }
     })
